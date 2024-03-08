@@ -1,0 +1,24 @@
+<div class="app-recipe-detail">
+    <div class="tags-container">
+        <mat-chip [routerLink]="['/browse/category', meal?.strCategory]">{{meal && meal.strCategory}}</mat-chip>
+        <mat-chip [routerLink]="['/browse/cuisine', meal?.strArea]">{{meal && meal.strArea}}</mat-chip>
+    </div>
+    <h2>{{meal && meal.strMeal}}</h2>
+    <img width="860" [src]="meal && meal.strMealThumb" alt="Meal Thumbnail Image">
+    <div *ngIf="meal && meal.strYoutube && meal.strYoutube !== ''">
+        <h2>Video Tutorial</h2>
+        <iframe width="860" height="515" [src]="getSafeVideoUrl(meal.strYoutube)" frameborder="0" allowfullscreen></iframe>    
+    </div>
+    <div class="detail-container">
+        <div>
+            <h2>Instruction</h2>
+            <p>{{meal && meal.strInstructions}}</p>
+        </div>
+        <div>
+            <h2>Ingredients</h2>
+            <ul>
+                <li *ngFor="let ingredient of ingredientArray">{{ingredient}}</li>
+            </ul>
+        </div>
+    </div>
+</div>

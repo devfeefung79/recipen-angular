@@ -1,0 +1,60 @@
+.app-search {
+    padding: 12px 48px;
+
+    mat-chip {
+        background-color: #e6ecdf;
+        width: fit-content;
+        margin-right: 5px;
+        margin-bottom: 3px;
+    }
+
+    .result-total-text {
+        float: right;
+        color: var(--gray-700);
+    }
+    
+    h1 {
+        font-size: 3.125rem;
+        color: var(--martinique);
+        font-weight: 500;
+        line-height: 100%;
+        letter-spacing: -0.125rem;
+        margin-bottom: 8px;
+    }
+
+    h2 {
+        font-size: 2.125rem;
+        color: var(--martinique);
+        font-weight: 500;
+        line-height: 100%;
+        letter-spacing: -0.125rem;
+    }
+
+    li {
+        color: var(--gray-700);
+        line-height: 150%;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+
+        .filter-panel {
+            flex: 1;
+        }
+
+        .resule-panel {
+            flex: 3;
+
+            .result-item {
+                display: flex;
+                gap: 20px;
+                align-items: center;
+                padding: 5px;
+                border-bottom: 1px solid #f0f0f0;
+                cursor: pointer;
+            }
+        }
+    }
+}

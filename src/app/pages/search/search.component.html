@@ -1,0 +1,32 @@
+<div class="app-search">
+    <h1>Recipes of "{{keyword}}"</h1>
+    <div class="result-total-text">{{meals && meals.length}} results</div>
+    <br/>
+    <div class="container">
+        <div class="filter-panel">
+            <h2>Category</h2>
+            <ul>
+                <li *ngFor="let categoryCount of categoryCountList">{{categoryCount.name}} ({{categoryCount.count}})</li>
+            </ul>
+            <h2>Cuisine</h2>
+            <ul>
+                <li *ngFor="let cuisineCount of cuisineCountList">{{cuisineCount.name}} ({{cuisineCount.count}})</li>
+            </ul>
+        </div>
+        <div class="resule-panel">
+            <div class="result-item" *ngFor="let meal of meals" [routerLink]="['/recipe', meal?.idMeal]">
+                <div class="image-container">
+                    <img height="175" width="175" [src]="meal.strMealThumb" alt="result-item-image">
+                </div>
+                <div class="content-container">
+                    <div class="tags-container">
+                        <mat-chip [routerLink]="['/browse/category', meal?.strCategory]">{{meal.strCategory}}</mat-chip>
+                        <mat-chip [routerLink]="['/browse/cuisine', meal?.strArea]">{{meal.strArea}}</mat-chip>
+                    </div>
+                    <h2>{{meal.strMeal}}</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pagination"></div>
+</div>

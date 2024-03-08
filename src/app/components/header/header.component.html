@@ -1,0 +1,21 @@
+<div class="app-header">
+    <div class="app-title" [routerLink]="['/home']">Recipen</div>
+    <div class="browse-option">
+        <button mat-button [matMenuTriggerFor]="categoryMenu">Category</button>
+        <mat-menu #categoryMenu="matMenu">
+            <button mat-menu-item *ngFor="let category of categoryOptions" [routerLink]="['/browse/category/', category?.strCategory]">
+                {{category.strCategory}}
+            </button>
+        </mat-menu>
+        <button mat-button [matMenuTriggerFor]="cuisineMenu">Cuisine</button>
+        <mat-menu #cuisineMenu="matMenu">
+            <button mat-menu-item *ngFor="let cuisine of cuisineOptions" [routerLink]="['/browse/cuisine/', cuisine?.strArea]">
+                {{cuisine.strArea}}
+            </button>
+        </mat-menu>
+    </div>
+    <div class="search-bar">
+        <input matInput [(ngModel)]="searchTerm" (keyup.enter)="performSearch()" placeholder="Search"/>
+        <mat-icon (click)="performSearch()">search</mat-icon>
+    </div>
+</div>

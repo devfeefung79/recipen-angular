@@ -1,27 +1,55 @@
 # Recipen
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.8.
+## About
 
-## Development server
+Recipen is a free website designed for food enthusiasts of all skill levels, offering a user-friendly interface to explore a diverse range of recipes.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+### Features
 
-## Code scaffolding
+#### Browse Recipes by Category or Cusisine
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+* Users are able to browse recipes by category or cuisine with
+    * the dropdown menu on header
+    * the browse recipe section on home page
 
-## Build
+#### Search Recipes by Keyword
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+* Users are able to search for recipes by inputting a keyword in the search bar on header
+* Users are able to see a list of search results on screen
 
-## Running unit tests
+#### View Recipe Details
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+* Users are able to view recipe details including video tutorial, instructions and ingredients
 
-## Running end-to-end tests
+## Getting Started
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### Prerequisites
 
-## Further help
+In order to run the project locally, you should have
+* valid version of Node.js installed
+* valid package manager (npm or yarn) installed
+* Angular CLI installed
+* git installed (optional for running git commands)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### Set up
+
+1. Clone the project repo to your local computer   
+   ```
+   git clone [projectURL]
+   ```
+
+1. Navigate to your project
+   ```
+   cd [path to project folder]
+   ```
+
+1. Install project dependencies
+   ```
+   npm install
+   ```
+
+1. Run project locally with Angular CLI
+   ```
+   ng serve
+   ```
+   You should be able to see the project hosted at `http://localhost:4200/`

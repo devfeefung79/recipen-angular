@@ -1,0 +1,33 @@
+<div class="browse-recipe-section">
+    <h1>Browse Recipes</h1>
+    <div class="browse-option">
+        <button mat-button (click)="onClickBrowseOption('category')">Category</button>
+        <button mat-button (click)="onClickBrowseOption('cuisine')">Cuisine</button>
+    </div>
+    <div class="browse-option-scroll-container">
+        <button mat-icon-button (click)="onArrowLeft()">
+            <mat-icon>arrow_circle_left</mat-icon>
+        </button>
+        <div class="option-list-view" *ngIf="currentSelection === 'category'">
+            <div class="image-container" *ngFor="let option of getDisplayCategoryOptions()" [routerLink]="['/browse/category/', option?.strCategory]">
+                <img [src]="option.imageUrl" [alt]="option.strCategory">
+                <div class="overlay"></div>
+                <div class="text-layer">
+                    <div class="text">{{option.strCategory}}</div>
+                </div>
+            </div>
+        </div>
+        <div class="option-list-view" *ngIf="currentSelection === 'cuisine'">
+            <div class="image-container" *ngFor="let option of getDisplayCuisineOptions()" [routerLink]="['/browse/cuisine/', option?.strArea]">
+                <img [src]="option.imageUrl" [alt]="option.strArea">
+                <div class="overlay"></div>
+                <div class="text-layer">
+                    <div class="text">{{option.strArea}}</div>
+                </div>
+            </div>
+        </div>
+        <button mat-icon-button (click)="onArrowRight()">
+            <mat-icon>arrow_circle_right</mat-icon>
+        </button>
+    </div>
+</div>

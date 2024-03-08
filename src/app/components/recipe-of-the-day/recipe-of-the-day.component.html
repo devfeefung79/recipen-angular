@@ -1,0 +1,17 @@
+<div class="app-recipe-of-the-day">
+    <h1>Recipe of the Day</h1>
+    <mat-card>
+        <div class="tags-container">
+            <mat-chip *ngFor="let tag of tags" [class]="tag.type" (click)="browseRecipeItem(tag)">
+                {{tag.text}}
+            </mat-chip>
+        </div>
+        <mat-card-content [routerLink]="['/recipe', meal?.idMeal]">
+            <div class="recipe-data">
+                <h2>{{meal && meal.strMeal}}</h2>
+                <p>{{meal && meal.strInstructions}}</p>
+            </div>
+            <img mat-card-image [src]="meal && meal.strMealThumb" alt="Meal Thumb Image">
+        </mat-card-content>
+    </mat-card>
+</div>

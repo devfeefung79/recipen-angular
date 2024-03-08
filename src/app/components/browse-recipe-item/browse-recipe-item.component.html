@@ -1,0 +1,6 @@
+<div class="app-browse-recipe-item">
+    <div class="recipe-card" *ngFor="let meal of meals" [routerLink]="['/recipe', meal?.idMeal]">
+        <img mat-card-image width="230" height="230" [src]="meal.strMealThumb" alt="Meal Image">
+        <h2>{{meal.strMeal}}</h2>
+    </div>
+</div>
