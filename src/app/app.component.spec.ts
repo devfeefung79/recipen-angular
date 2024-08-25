@@ -25,13 +25,13 @@ describe('AppComponent', () => {
     }).compileComponents();
   });
 
-  it('create the app', () => {
+  it('should create the app', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
     expect(app).toBeTruthy();
   });
 
-  it(`have as title 'recipen'`, () => {
+  it(`should have as title 'recipen'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
     expect(app.title).toEqual('recipen');

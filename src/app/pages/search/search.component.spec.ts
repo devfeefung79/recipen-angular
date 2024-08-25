@@ -29,4 +29,17 @@ describe('SearchComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  // TODO: test ngOnInit method
+
+  // TODO: should render correct page title
+
+  // TODO: should render correct results
+
+  // TODO: should render correct filter panel
+
+  // TODO: should render correct result panel
+
+  // TODO: should render correct result item
+  
 });

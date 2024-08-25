@@ -30,4 +30,11 @@ describe('BrowseCuisineComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  // TODO: test ngOnInit method
+
+  // TODO: should render correct page title
+
+  // TODO: should render nested component
+  
 });

@@ -26,6 +26,7 @@ export class RecipeComponent implements OnInit {
         if (response && response.meals && response.meals.length > 0) {
           this.meal = response?.meals[0];
 
+          // ingredient and measure contains up to 20 as per API specification
           for (let i=1; i<=20; i++) {
             const concatIngredient = this.meal[`strIngredient${i}`] && this.meal[`strMeasure${i}`] ? this.meal[`strIngredient${i}`] + ' ' + this.meal[`strMeasure${i}`] : '';
             if (concatIngredient.trim() !== '') {

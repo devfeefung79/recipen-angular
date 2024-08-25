@@ -18,16 +18,16 @@ describe('BannerComponent', () => {
     fixture.detectChanges();
   });
 
-  it('create component', () => {
+  it('should create component', () => {
     expect(component).toBeTruthy();
   });
 
-  it('render proper title', () => {
+  it('should render proper title', () => {
     const titleElement = fixture.debugElement.query(By.css('span'));
     expect(titleElement.nativeElement.textContent).toBe('Discover Delicious Recipes');
   });
 
-  it('render correct message', () => {
+  it('should render correct message', () => {
     const messageElement = fixture.debugElement.query(By.css('p'));
     expect(messageElement.nativeElement.textContent).toBe('Embark on a culinary journey through our collection of tantalizing dishes, crafted to delight your taste buds.');
   });

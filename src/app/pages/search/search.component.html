@@ -13,7 +13,7 @@
                 <li *ngFor="let cuisineCount of cuisineCountList">{{cuisineCount.name}} ({{cuisineCount.count}})</li>
             </ul>
         </div>
-        <div class="resule-panel">
+        <div class="result-panel">
             <div class="result-item" *ngFor="let meal of meals" [routerLink]="['/recipe', meal?.idMeal]">
                 <div class="image-container">
                     <img height="175" width="175" [src]="meal.strMealThumb" alt="result-item-image">
@@ -28,5 +28,4 @@
             </div>
         </div>
     </div>
-    <div class="pagination"></div>
 </div>

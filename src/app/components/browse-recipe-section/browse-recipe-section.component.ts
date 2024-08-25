@@ -15,6 +15,9 @@ export class BrowseRecipeSectionComponent implements OnInit {
 
   constructor(private mealService: MealService) {}
 
+  /*
+   * Initialize component data by fetching category and area lists from the meal service API.
+   */
   ngOnInit(): void { 
     this.mealService.getCategoryList().subscribe(response => {
       if (response && response.meals) {
