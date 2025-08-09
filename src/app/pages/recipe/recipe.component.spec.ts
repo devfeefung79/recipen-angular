@@ -1,13 +1,17 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { RouterModule, ActivatedRoute, convertToParamMap } from '@angular/router';
-import { of } from 'rxjs';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
+import {
+  ActivatedRoute,
+  convertToParamMap,
+  RouterModule,
+} from '@angular/router';
+import { of } from 'rxjs';
 
-import { RecipeComponent } from './recipe.component';
 import { MatChipsModule } from '@angular/material/chips';
 import { MealService } from '../../meal.service';
-import { mockMeal, mockMeals } from '../../mock/data';
+import { mockMeal } from '../../mock/data';
+import { RecipeComponent } from './recipe.component';
 
 describe('RecipeComponent', () => {
   let component: RecipeComponent;
@@ -21,12 +25,13 @@ describe('RecipeComponent', () => {
       providers: [
         {
           provide: ActivatedRoute,
-          useValue: { snapshot: { paramMap: convertToParamMap({ id: '52771' }) } }
+          useValue: {
+            snapshot: { paramMap: convertToParamMap({ id: '52771' }) },
+          },
         },
-      ]
-    })
-    .compileComponents();
-    
+      ],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(RecipeComponent);
     component = fixture.componentInstance;
     mealService = TestBed.inject(MealService);
@@ -37,34 +42,30 @@ describe('RecipeComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  // TODO: test ngOnInit method
   it('should fetch and assign recipe', () => {
-    spyOn(mealService, 'getMealDetailsById').and.returnValue(of({ meals: [mockMeal] }));
+    spyOn(mealService, 'getMealDetailsById').and.returnValue(
+      of({ meals: [mockMeal] })
+    );
 
     component.ngOnInit();
     expect(mealService.getMealDetailsById).toHaveBeenCalled();
     expect(component.meal).toEqual(mockMeal);
-  })
+  });
 
-  // TODO: should render correct tags
-
-  // TODO: should render correct recipe title
   it('should render correct recipe title', () => {
-    spyOn(mealService, 'getMealDetailsById').and.returnValue(of({ meals: [mockMeal] }));
+    spyOn(mealService, 'getMealDetailsById').and.returnValue(
+      of({ meals: [mockMeal] })
+    );
     component.ngOnInit();
     fixture.detectChanges();
 
-    const titleElements = fixture.debugElement.queryAll(By.css('.app-recipe-detail h2'));
+    const titleElements = fixture.debugElement.queryAll(
+      By.css('.app-recipe-detail h2')
+    );
     expect(titleElements).toBeTruthy();
-    expect(titleElements.length).toBe(2);
-    expect(titleElements[0].nativeElement.textContent).toContain(mockMeal.strMeal);
-  })
-
-  // TODO: should render correct recipe image
-
-  // TODO: should render correct video tutorial if available
-
-  // TODO: should render correct instructions
-  
-  // TODO: should render correct ingredients
+    expect(titleElements.length).toBe(4);
+    expect(titleElements[0].nativeElement.textContent).toContain(
+      mockMeal.strMeal
+    );
+  });
 });
