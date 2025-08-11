@@ -1,24 +1,23 @@
 .app-banner {
+  min-height: 200px;
+  background-image: url(../../../assets/banner.jpg);
+  background-size: cover;
+  box-shadow: 5px 5px 10px rgba(172, 172, 172, 0.3);
+
+  .app-description {
+    padding: 72px 48px;
     min-height: 200px;
-    background-image: url(../../../assets/banner.jpg);
-    background-size: cover;
-    box-shadow: 5px 5px 10px rgba(172, 172, 172, 0.3);
+  }
 
-    .app-description {
-        padding: 72px 48px;
-        min-height: 200px;
-    }
+  span {
+    font-size: 52px;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.45);
+  }
 
-    span {
-        font-size: 52px;
-        color: #fff;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.45); 
-    }
-
-    p {
-        font-size: 22px;
-        color: #fff;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.45); 
-    }
-
+  p {
+    font-size: 22px;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.45);
+  }
 }

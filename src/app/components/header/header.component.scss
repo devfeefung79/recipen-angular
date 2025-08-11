@@ -1,53 +1,51 @@
 .app-header {
-    display: flow-root;
-    background-color: #fff;
-    padding: 10px 24px;
+  display: flow-root;
+  background-color: #fff;
+  padding: 10px 24px;
 
-    .app-title {
-        font-size: 26px;
-        display: inline-block;
-        cursor: pointer;
+  .app-title {
+    font-size: 26px;
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  .browse-option {
+    display: inline-block;
+    margin-left: 20px;
+
+    span {
+      margin: 5px;
+      color: var(--gray-900);
+      text-decoration: underline;
+    }
+  }
+
+  .search-bar {
+    display: flex;
+    align-items: center;
+    float: right;
+
+    input {
+      -webkit-appearance: none;
+      height: 28px;
+      padding: 4px 12px;
+      border-radius: 2px 0px 0px 2px;
+      border: 1px solid #f0f0f0;
+      border-right: 0px;
     }
 
-    .browse-option {
-        display: inline-block;
-        margin-left: 20px;
-
-        span {
-            margin: 5px;
-            color: var(--gray-900);
-            text-decoration: underline;
-        }
+    input:focus {
+      outline: none;
     }
 
-    .search-bar {
-        display: flex;
-        align-items: center;
-        float: right;
-
-        input {
-            -webkit-appearance: none;
-            height: 28px;
-            padding: 4px 12px;
-            border-radius: 2px 0px 0px 2px;
-            border: 1px solid #f0f0f0;
-            border-right: 0px;
-        }
-
-        input:focus {
-            outline: none;
-        }
-
-        mat-icon {
-            border: 1px solid #f0f0f0;
-            border-left: 0px;
-            height: 22px;
-            width: 22px;
-            padding: 7px;
-            border-radius: 0px 2px 2px 0px;
-            cursor: pointer;
-        }
-    
+    mat-icon {
+      border: 1px solid #f0f0f0;
+      border-left: 0px;
+      height: 22px;
+      width: 22px;
+      padding: 7px;
+      border-radius: 0px 2px 2px 0px;
+      cursor: pointer;
     }
-
+  }
 }

@@ -1,12 +1,12 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
-import { HttpClientTestingModule } from '@angular/common/http/testing';
 
+import { FormsModule } from '@angular/forms';
+import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
-import { FormsModule } from '@angular/forms';
-import { MatMenuModule } from '@angular/material/menu';
-import { MatIconModule } from '@angular/material/icon';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
@@ -16,12 +16,9 @@ describe('AppComponent', () => {
         HttpClientTestingModule,
         MatMenuModule,
         MatIconModule,
-        FormsModule
+        FormsModule,
       ],
-      declarations: [
-        AppComponent,
-        HeaderComponent
-      ],
+      declarations: [AppComponent, HeaderComponent],
     }).compileComponents();
   });
 
@@ -36,5 +33,4 @@ describe('AppComponent', () => {
     const app = fixture.componentInstance;
     expect(app.title).toEqual('recipen');
   });
-
 });

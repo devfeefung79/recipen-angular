@@ -1,8 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 
-import { BrowseRecipeItemComponent } from './browse-recipe-item.component';
 import { mockMeals } from '../../mock/data';
+import { BrowseRecipeItemComponent } from './browse-recipe-item.component';
 
 describe('BrowseRecipeItemComponent', () => {
   let component: BrowseRecipeItemComponent;
@@ -12,9 +12,8 @@ describe('BrowseRecipeItemComponent', () => {
     await TestBed.configureTestingModule({
       imports: [RouterTestingModule.withRoutes([])],
       declarations: [BrowseRecipeItemComponent],
-    })
-    .compileComponents();
-    
+    }).compileComponents();
+
     fixture = TestBed.createComponent(BrowseRecipeItemComponent);
     component = fixture.componentInstance;
     component.meals = mockMeals;
@@ -30,11 +29,11 @@ describe('BrowseRecipeItemComponent', () => {
     const compiled = fixture.nativeElement;
     const recipeCards = compiled.querySelectorAll('.recipe-card');
     expect(recipeCards.length).toBe(mockMeals.length);
-  
+
     recipeCards.forEach((card: HTMLElement, index: number) => {
       expect(card.textContent).toContain(mockMeals[index].strMeal);
     });
-  })
+  });
 
   // test if image render with correct src
   it('should render the correct image', () => {
@@ -42,14 +41,13 @@ describe('BrowseRecipeItemComponent', () => {
     const images = compiled.querySelectorAll('img');
     expect(images.length).toBe(mockMeals.length);
     expect(images[0].src).toContain(mockMeals[0].strMealThumb);
-  })
+  });
 
-  // test if recipe title is rendered in h2 
+  // test if recipe title is rendered in h2
   it('should display the correct title', () => {
     const compiled = fixture.nativeElement;
     const titles = compiled.querySelectorAll('h2');
     expect(titles.length).toBe(mockMeals.length);
     expect(titles[0].textContent).toContain(mockMeals[0].strMeal);
   });
-
 });

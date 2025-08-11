@@ -1,9 +1,9 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ActivatedRoute, convertToParamMap } from '@angular/router';
 
-import { BrowseCategoryComponent } from './browse-category.component';
 import { BrowseRecipeItemComponent } from '../../components/browse-recipe-item/browse-recipe-item.component';
+import { BrowseCategoryComponent } from './browse-category.component';
 
 describe('BrowseCategoryComponent', () => {
   let component: BrowseCategoryComponent;
@@ -16,12 +16,13 @@ describe('BrowseCategoryComponent', () => {
       providers: [
         {
           provide: ActivatedRoute,
-          useValue: { snapshot: { paramMap: convertToParamMap({ category: 'beef' }) } }
+          useValue: {
+            snapshot: { paramMap: convertToParamMap({ category: 'beef' }) },
+          },
         },
-      ]
-    })
-    .compileComponents();
-    
+      ],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(BrowseCategoryComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
@@ -36,5 +37,4 @@ describe('BrowseCategoryComponent', () => {
   // TODO: should render correct page title
 
   // TODO: should render nested component
-
 });

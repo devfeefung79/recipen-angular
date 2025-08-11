@@ -1,5 +1,5 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ActivatedRoute, convertToParamMap } from '@angular/router';
 
 import { SearchComponent } from './search.component';
@@ -15,12 +15,13 @@ describe('SearchComponent', () => {
       providers: [
         {
           provide: ActivatedRoute,
-          useValue: { snapshot: { paramMap: convertToParamMap({ keyword: 'curry' }) } }
+          useValue: {
+            snapshot: { paramMap: convertToParamMap({ keyword: 'curry' }) },
+          },
         },
-      ]
-    })
-    .compileComponents();
-    
+      ],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(SearchComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
@@ -41,5 +42,4 @@ describe('SearchComponent', () => {
   // TODO: should render correct result panel
 
   // TODO: should render correct result item
-  
 });
